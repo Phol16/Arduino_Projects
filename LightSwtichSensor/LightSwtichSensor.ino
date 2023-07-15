@@ -17,7 +17,7 @@ void setup() {
 
 void loop() {
   //function that reads UDS inputs
-  int UDS_Reader = UltraDistanceSensor();
+  int UDS_Reader = UltrasonicDistanceSensor();
 
   //conditional statment if reader is within a distance
   if (UDS_Reader <= TheDistance) {
@@ -37,7 +37,7 @@ void loop() {
 //while loop if actovator is true do the codes inside
   while (activator) {
     //function that reads UDS inputs
-    UDS_Reader = UltraDistanceSensor();
+    UDS_Reader = UltrasonicDistanceSensor();
 
     //make switch open
     digitalWrite(Switch_pin, HIGH);
@@ -53,10 +53,10 @@ void loop() {
     }
   }
 
-  //while loop when object closed the first loop
+  //while loop when object is closed again and the first loop ended
   while (active) {
     //function that reads UDS inputs
-    UDS_Reader = UltraDistanceSensor();
+    UDS_Reader = UltrasonicDistanceSensor();
     
     //will make the switch close
     digitalWrite(Switch_pin, LOW);
@@ -69,7 +69,7 @@ void loop() {
 }
 
 
-int UltraDistanceSensor() {
+int UltrasonicDistanceSensor() {
   // establish variables for duration of the ping, and the distance result
   // in inches and centimeters:
   long duration, inches;
