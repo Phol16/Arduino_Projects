@@ -34,7 +34,7 @@ void loop() {
     validator = 0;
   }
 
-//while loop if actovator is true do the codes inside
+//while loop if activator is true do the codes inside
   while (activator) {
     //function that reads UDS inputs
     UDS_Reader = UltrasonicDistanceSensor();
@@ -47,7 +47,7 @@ void loop() {
       active = true;
     }
 
-    //conditional statment if object moved out of the given distance again then will close the loop
+    //conditional statment if object moved in of the given distance again then will close the loop
     if (active && UDS_Reader <= TheDistance) {
       activator = false;
     }
